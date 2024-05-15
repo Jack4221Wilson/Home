@@ -58,3 +58,32 @@ ballList.forEach((ball) => {
   moveBall(ball)
 })
 
+let navOpen = false
+const navButton = document.querySelector('nav button')
+const navEle = document.querySelector('nav')
+
+function openCloseNav () {
+    let direction = 1,
+    rightValue = -22
+    if (navOpen) { direction = -1; rightValue = 0}
+    const distance = [1,1,2,3,4,4,3,2,1,1]
+    distance.forEach((distance, i) => {
+        rightValue += distance * direction
+        moveNav(rightValue, i)
+    })
+    if (navOpen) {
+        navOpen = false;
+        navButton.innerHTML = `<
+         <div class='backdrop'></div>`
+        return}
+    navOpen = true
+    navButton.innerHTML = `>
+     <div class='backdrop'></div>`
+    return
+}
+function moveNav(value, delayCount) {
+    setTimeout(() => {
+        navEle.style = `right: ${value}vw;`
+    }, fps * delayCount)
+}
+navButton.addEventListener('click', openCloseNav)

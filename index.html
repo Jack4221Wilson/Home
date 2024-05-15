@@ -22,31 +22,54 @@
         }
         nav {
             position: fixed;
-            right: 0;
+            width: 20vw;
+            right: -22vw;
             top: 0;
             height: 100vh;
-            background-color: rgb(216,87,133);
+            padding-left: 0.5rem;
+            padding-top: 1rem;
+            z-index: 1;
             button {
                 position: absolute;
                 top: 10vh;
-                left: -1.4rem;
+                left: -1.47rem;
                 font-size: 1.5rem;
-                background-color: rgb(216,87,133);
+                background: none;
                 color: rgb(227, 230, 230);
                 font-weight: bold;
-                border: 0.3rem solid rgb(65,96,126);
-                border-radius: 0.4rem;
-                border-right: none;
-                border-bottom-right-radius: 0;
-                border-top-right-radius: 0;
+                border: none;
                 &:hover {
-                    background-color: rgb(214,190,103);
-                    color: rgb(216,87,133);
+                    color: rgb(214,190,103);
                 }
                 &:active{
-                    background-color: rgb(65,96,126);
-                    color: rgb(216,87,133);
+                    color: rgb(65,96,126);
                 }
+                .backdrop {
+                    box-shadow: 0 0 0.5rem 0.5rem rgb(216,87,133);
+                    top: -0.3rem;
+                }
+            }
+            a {
+                color: rgb(214,190,103);
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                &:hover {
+                    color: rgb(227, 230, 230);
+                }
+                &:active{
+                    color: rgb(65,96,126);
+                }
+            }
+            .credit {
+                font-size: 0.5rem;
+            }
+            .backdrop {
+                background-color: rgb(216,87,133);
+                box-shadow: 0 0 1rem 1rem rgb(216,87,133);
+            }
+            ul {
+                margin-top: 0;
             }
         }
         #mainWrapper {
@@ -93,7 +116,25 @@
   <body>
     
     <nav>
-        <button id='navButton'><</button>
+        <div class='backdrop'></div>
+        <button id='navButton'>
+            <
+            <div class='backdrop'></div>
+        </button>
+        
+        <p>Some Fun Sites</p>
+        <ul>
+            <li>
+                <a href="/frogs">Frogs</a>
+                <p class="credit">Created by M. Deane and J. Craig</p>
+            </li>
+            <li>
+                <a href="/gridExperiment">Grid Fun</a>
+            </li>
+            <li>
+                <a href="/loribirthday">Lori's Gift</a>
+            </li>
+        </ul>
     </nav>
 
     <div id="mainWrapper">
