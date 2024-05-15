@@ -20,6 +20,35 @@
             margin: 0;
             color: rgb(227, 230, 230);
         }
+        nav {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            background-color: rgb(216,87,133);
+            button {
+                position: absolute;
+                top: 10vh;
+                left: -1.4rem;
+                font-size: 1.5rem;
+                background-color: rgb(216,87,133);
+                color: rgb(227, 230, 230);
+                font-weight: bold;
+                border: 0.3rem solid rgb(65,96,126);
+                border-radius: 0.4rem;
+                border-right: none;
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+                &:hover {
+                    background-color: rgb(214,190,103);
+                    color: rgb(216,87,133);
+                }
+                &:active{
+                    background-color: rgb(65,96,126);
+                    color: rgb(216,87,133);
+                }
+            }
+        }
         #mainWrapper {
             position: absolute;
             min-width: 75%;
@@ -62,6 +91,10 @@
     </style>
   </head>
   <body>
+    
+    <nav>
+        <button id='navButton'><</button>
+    </nav>
 
     <div id="mainWrapper">
       <div id="backgroundBalls">
