@@ -1,0 +1,33 @@
+body {
+  padding: 30px;
+  height: 93vh;
+}
+
+.hero {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 18px;
+}
+.grid-container {
+  border-radius: 32px;
+  /* animation: 3s infinite spin; */
+  animation-delay: 0ms;
+  animation-timing-function: linear;
+}
+/*.grid-container::before{
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  backdrop-filter: blur(20px);
+}*/
+@keyframes spin{
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
