@@ -53,7 +53,7 @@ function moveBall (ball) {
     ball.ele.setAttribute('cy', `${ball.position[1]}`)
   }, fps)
 }
-const fps = 1000/24
+const fps = 1000/12
 ballList.forEach((ball) => {
   moveBall(ball)
 })
