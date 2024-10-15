@@ -4,16 +4,29 @@ use std::{
     io::{prelude::*, BufReader},
     thread
 };
+use Web::ThreadPool;
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let http_port = TcpListener::bind("192.168.0.104:80").unwrap();
+    //let https_port = TcpListener::bind("192.168.0.104:443").unwrap();
+    let pool = ThreadPool::new(3);
 
-    for stream in listener.incoming() {
+    for stream in http_port.incoming() {
         let stream = stream.unwrap();
 
-        //println!("Connection established");
-        handle_connection(stream);
+        pool.execute(|| {
+            handle_connection(stream);
+        });
+        
     }
+    /*for stream in https_port.incoming() {
+        let stream = stream.unwrap();
+
+        pool.execute(|| {
+            handle_connection(stream);
+        });
+        
+    }*/
 }
 
 fn handle_connection(mut stream: TcpStream) {
@@ -27,13 +40,17 @@ fn handle_connection(mut stream: TcpStream) {
         if filesource == "/" {
             filesource = "index.html"
         }
-        filesource = filesource.trim_start_matches('/');
+        filesource = filesource.trim_start_matches("/");
 
-        println!("{}", filesource);
+        let file_prfx: &'static str = "../";
+
+        //let filesource = file_prfx.to_owned() + filesource;
         
+
+
         ("HTTP/1.1 200 OK", filesource)
     } else {
-        ("HTTP/1.1 404 NOT FOUND", "index.html")
+        ("HTTP/1.1 404 NOT FOUND", "../index.html")
     };
 
     let contents = fs::read_to_string(filename).unwrap_or_else(|error| {
@@ -41,6 +58,7 @@ fn handle_connection(mut stream: TcpStream) {
         let error_response = error.to_string();
         error_response
     });
+
     let length = contents.len();
 
     let response = format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
@@ -71,8 +89,7 @@ fn handle_connection(mut stream: TcpStream) {
         .take_while(|line| !line.is_empty())
         .collect();
 
-    println!("Request: {http_request:#?}");
-    I'm changing the code'*/
+    println!("Request: {http_request:#?}");*/
 
     
 }

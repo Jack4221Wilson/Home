@@ -1,6 +1,9 @@
 /loribirthday
 /gridExperiment
 /Frogs
-!/webserver
 /.vs
 /.well-known
+
+# Added by cargo
+
+/target
