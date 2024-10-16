@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../index.css">
+  </head>
+  <body>
+
+    <div class="art-board">
+      <div class="art-card">
+        <img class="art-thumbnail" href="">
+        <h1>
+          An Example Card
+        </h1>
+        <p>
+          this is an example of a brief explanation of the art piece
+        </p>
+      </div>
+    </div>
+    
+    <svg
+        width="auto"
+        height="auto"
+        xmlns="http://www.w3.org/2000/svg">
+
+
+            <filter id="displacementFilter">
+              <feTurbulence
+                type="turbulence"
+                baseFrequency="0.4"
+                numOctaves="8"
+                stitchTiles='stitch'
+                result="turbulence" />
+              <feDisplacementMap
+                in2="turbulence"
+                in="SourceGraphic"
+                scale="50"
+                xChannelSelector="R"
+                yChannelSelector="G" />
+            </filter>
+
+            <radialGradient id="ballGradient">
+              <stop offset="25%" stop-opacity="1.0" stop-color="rgb(51,95,122)" />
+              <stop offset="100%" stop-opacity="0.0" stop-color= "rgb(51,95,122)"/>
+            </radialGradient>
+
+        </svg>
+  </body>
