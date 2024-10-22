@@ -109,6 +109,23 @@ p {
 }
 .art-card {
     display: block;
-    height: 4rem;
-    width: 6rem;
+    position: relative;
+    height: 9.5em;
+    width: 12rem; 
+    h1 {
+      margin: 0.25rem;
+      margin-top: 0;
+      font-size: 1.25rem;
+      filter: none;
+    }
+    img {
+      height: 6rem;
+      width: 10.5rem;  
+      margin-left: 1rem;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+      background-color: white;
+    } 
 }
+
+
