@@ -1,4 +1,4 @@
-
+const art_board = document.querySelector("div .art-board");
 
 const example_card = document.querySelector("div .art-card");
 example_card.addEventListener("click", (e) => {
@@ -28,7 +28,6 @@ function growShrinkCard(art_card) {
 
   function sendingSize(art_card, card_height, direction, growth) {
     growth.forEach((i) => {
-      console.log(card_height);
       card_height = card_height + ((growth[i] * direction) / 2);
       resizeArtCard(art_card, card_height, growth[i]);
   });
@@ -38,5 +37,26 @@ function resizeArtCard(art_card, value, delayCount) {
   setTimeout(() => {
       art_card.style = `height: ${value}rem;`
   }, fps * delayCount)
-}
+};
 
+function createArtCard() {
+  let art_card = document.createElement('div');
+  let backdrop = art_card.appendChild('div');
+  let thumbnail = art_card.appendChild('img');
+  let header = art_card.appendChild('h1');
+  let description = art_card.appendChild('p');
+
+  art_card.className = 'art-card';
+  backdrop.className = 'backdrop';
+  thumbnail.classname = 'art-thumbnail';
+};
+
+async function getArtList() {
+  const response = await fetch('art_objects.json');
+
+  const art_list = await response.json();
+
+  return art_list;
+};
+
+console.log(getArtList);

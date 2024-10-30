@@ -1,0 +1,16 @@
+[
+
+  {
+    "image": "/pictures/smiling amoeba.jpg",
+    "header": "Smiling Amoeba",
+    "description": "something fun from alcohol.",
+    "link": null
+  },
+  
+  {
+    "image": "/pictures/YOINK.jpg",
+    "header": "YOINK",
+    "description": "A pigeon sneaks a bite.",
+    "link": null
+  }
+]

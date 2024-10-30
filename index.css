@@ -111,7 +111,8 @@ p {
     display: block;
     position: relative;
     height: 9.5em;
-    width: 12rem; 
+    width: 12rem;
+    overflow: hidden;
     h1 {
       margin: 0.25rem;
       margin-top: 0;
