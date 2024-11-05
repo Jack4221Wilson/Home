@@ -1,4 +1,4 @@
-const art_board = document.querySelector("div .art-board");
+const art_board = document.querySelector("div");
 
 const example_card = document.querySelector("div .art-card");
 example_card.addEventListener("click", (e) => {
@@ -39,24 +39,59 @@ function resizeArtCard(art_card, value, delayCount) {
   }, fps * delayCount)
 };
 
-function createArtCard() {
-  let art_card = document.createElement('div');
-  let backdrop = art_card.appendChild('div');
-  let thumbnail = art_card.appendChild('img');
-  let header = art_card.appendChild('h1');
-  let description = art_card.appendChild('p');
+function createArtCard(data) {
+    let art_card = document.createElement('div');
+    let backdrop = document.createElement('div');
+    art_card.appendChild(backdrop);
+    let thumbnail = document.createElement('img');
+    art_card.appendChild(thumbnail);
+    let header = document.createElement('h1');
+    art_card.appendChild(header);
+    let description = document.createElement('p');
+    art_card.appendChild(description);
 
-  art_card.className = 'art-card';
-  backdrop.className = 'backdrop';
-  thumbnail.classname = 'art-thumbnail';
+    art_card.className = 'art-card';
+    backdrop.className = 'backdrop';
+    thumbnail.classname = 'art-thumbnail';
+
+    thumbnail.setAttribute('src', `${data.image}`);
+    header.innerHTML = data.header;
+    description.innerHTML = data.description;
+
+    art_card.addEventListener("click", (e) => {
+        growShrinkCard(art_card);
+    });
+
+    return art_card;
+
 };
 
 async function getArtList() {
-  const response = await fetch('art_objects.json');
+    const response = await fetch('http://jackawilson.art/pages/art_board/art_objects.json', {
+        method: 'GET',
+        mode: "cors",
+    });
+    
+    const art_list = await response.json();
 
-  const art_list = await response.json();
-
-  return art_list;
+    return art_list;
 };
 
-console.log(getArtList);
+async function populateBoard() {
+    const art_data = await getArtList();
+
+    let art_cards = [];
+
+    art_data.forEach((art_info) => {
+        let new_card = createArtCard(art_info);
+        art_cards.push(new_card);
+    });
+
+    art_cards.forEach((i) => {
+
+        art_board.appendChild(i);
+    });
+};
+
+populateBoard();
+
