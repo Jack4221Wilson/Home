@@ -40,9 +40,9 @@ function resizeArtCard(art_card, value, delayCount) {
 };
 
 function createArtCard(data) {
+    let art_card_border = document.createElement('div');
     let art_card = document.createElement('div');
-    let backdrop = document.createElement('div');
-    art_card.appendChild(backdrop);
+    art_card_border.appendChild(art_card);
     let thumbnail = document.createElement('img');
     art_card.appendChild(thumbnail);
     let header = document.createElement('h1');
@@ -51,7 +51,7 @@ function createArtCard(data) {
     art_card.appendChild(description);
 
     art_card.className = 'art-card';
-    backdrop.className = 'backdrop';
+    art_card_border.className = 'art-card-border';
     thumbnail.classname = 'art-thumbnail';
 
     thumbnail.setAttribute('src', `${data.image}`);
@@ -62,7 +62,7 @@ function createArtCard(data) {
         growShrinkCard(art_card);
     });
 
-    return art_card;
+    return art_card_border;
 
 };
 

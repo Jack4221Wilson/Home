@@ -7,7 +7,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: url('Flowers.svg');
+  background-color: rgb(65,96,126);
   background-size: 300px;
   margin: 0;
   color: rgb(227, 230, 230);
@@ -109,10 +109,13 @@ p {
 }
 .art-card {
     display: block;
+    background-color: rgb(51,95,122);
     position: relative;
     height: 9.5em;
     width: 12rem;
+    margin: 0.25rem;
     overflow: hidden;
+    border-radius: 10%;
     h1 {
       margin: 0.25rem;
       margin-top: 0;
@@ -124,9 +127,17 @@ p {
       width: 10.5rem;  
       margin-left: 1rem;
       margin-top: 1rem;
-      margin-right: 0.5rem;
+      margin-right: 1rem;
       background-color: white;
     } 
+}
+
+.art-card-border{
+    background: url('Flowers.svg');
+    width: fit-content;
+    height: fit-content;
+    margin: 0.5rem;
+    border-radius: 10%;
 }
 
 
