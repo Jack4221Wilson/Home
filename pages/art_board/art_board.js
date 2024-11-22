@@ -10,9 +10,9 @@ const fps = 1000/12;
 let card_open = false;
 function growShrinkCard(art_card) {
 
-  let card_height = 9.5;
+  let card_height = 11;
   let direction = -1;
-  let speed_ot = [1,1,2,2,2,1,1];
+  let speed_ot = [1,1,2,2,3,2,2,1,1];
 
   if (!card_open) {
       direction = 1;
@@ -20,7 +20,7 @@ function growShrinkCard(art_card) {
       card_open = true;
       return
     };
-    card_height = 14;
+    card_height = 17;
     sendingSize(art_card, card_height, direction, speed_ot);
     card_open = false;
     direction = -1;

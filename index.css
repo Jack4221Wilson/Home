@@ -111,8 +111,8 @@ p {
     display: block;
     background-color: rgb(51,95,122);
     position: relative;
-    height: 9.5em;
-    width: 12rem;
+    height: 11em;
+    width: 11rem;
     margin: 0.25rem;
     overflow: hidden;
     border-radius: 10%;
@@ -124,11 +124,15 @@ p {
     }
     img {
       height: 6rem;
-      width: 10.5rem;  
-      margin-left: 1rem;
-      margin-top: 1rem;
-      margin-right: 1rem;
+      width: 10rem;  
+      margin-left: 0.5rem;
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
       background-color: white;
+      border-radius: 10%;
+    }
+    p {
+      margin-left: 0.5rem;
     } 
 }
 
