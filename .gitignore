@@ -3,6 +3,10 @@
 /Frogs
 /.vs
 /.well-known
+*.jpg
+*.zip
+*.png
+*.pdf
 
 # Added by cargo
 
