@@ -70,7 +70,7 @@ function createArtCard(data) {
 };
 
 async function getArtList() {
-    const response = await fetch('http://jackawilson.art/pages/art_board/art_objects.json', {
+    const response = await fetch('http://jackawilson.art/pages/art_objects.json', {
         method: 'GET',
         mode: "cors",
     });
