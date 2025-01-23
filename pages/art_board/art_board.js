@@ -43,8 +43,10 @@ function createArtCard(data) {
     let art_card_border = document.createElement('div');
     let art_card = document.createElement('div');
     art_card_border.appendChild(art_card);
+    let thumbnail_div = document.createElement('div');
+    art_card.appendChild(thumbnail_div);
     let thumbnail = document.createElement('img');
-    art_card.appendChild(thumbnail);
+    thumbnail_div.appendChild(thumbnail);
     let header = document.createElement('h1');
     art_card.appendChild(header);
     let description = document.createElement('p');
@@ -52,7 +54,8 @@ function createArtCard(data) {
 
     art_card.className = 'art-card';
     art_card_border.className = 'art-card-border';
-    thumbnail.classname = 'art-thumbnail';
+    thumbnail_div.className = 'thumbnail-div';
+    thumbnail.className = 'art-thumbnail';
 
     thumbnail.setAttribute('src', `${data.image}`);
     header.innerHTML = data.header;

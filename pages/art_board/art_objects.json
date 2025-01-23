@@ -4,7 +4,10 @@
     "image": "http://jackawilson.art/pages/art_board/pictures/Smiling_Amoeba.jpg",
     "header": "Smiling Amoeba",
     "description": "something fun from alcohol.",
-    "link": null
+    "link": null,
+    "id": 1,
+    "info": "6\" x 6\", alcohol ink, 2018",
+    "copy": "Rainbow clouds surround the central subject, a similarly groovy little guy who's having a good time. Created by dropping alcohol ink on wax paper to create the colorful cloud like shapes featured."
   },
 
   {
@@ -20,7 +23,7 @@
     "link": null
   },
   {
-    "image": "http://jackawilson.art/pages/art_board/pictures/loisie_lmaor.jpg",
+    "image": "http://jackawilson.art/pages/art_board/pictures/loisiu_lmaor.jpg",
     "header": "Loisie Lmaor",
     "description": "Best dime novelist of his time.",
     "link": null
