@@ -103,6 +103,7 @@ p {
   box-shadow: 0 0 0.5rem 0.5rem rgb(51,95,122);
   filter: url(#displacementFilter);
 }
+
 .art-board {
   display: flex;
   flex-wrap: wrap;
@@ -153,5 +154,78 @@ p {
     margin: 0.5rem;
     border-radius: 10%;
 }
+
+.new-nav {
+  width: 90%;
+  margin-inline: 5%;
+  margin-block: 0.5rem;
+  padding: 0;
+  height: 2rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+.home-link {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  color: #dc5085;
+}
+.nav-list {
+  display: flex;
+  flex: auto;
+  gap: 10px;
+  list-style: none;
+  width: max-content;
+}
+.nav-link {
+  flex: auto;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: #dc5085;
+  text-align: center;
+  a {
+    color: #ede6e6;
+    font-size: 1.5rem;
+    padding-block: 0.25rem;
+  }
+}
+/* art page */
+.centering {
+  display: flex;
+  justify-content: center;
+}
+.display-img {
+  max-width: 100vw;
+  max-height: 70vh;
+}
+.title-div {
+  width: 90%;
+  margin-inline: 5%;
+  margin-block: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 2rem;
+  padding: 0;
+}
+.info {
+  font-style: italic;
+  font-size: 2rem;
+}
+.copy-box {
+  max-width: 100vw;
+  background-color: #d9c565;
+  padding-block: 0.5rem;
+  border-radius: 1rem;
+}
+.copy {
+  width: 90%;
+  margin-inline: 5%;
+  color: #335f7a;
+}
+
 
 
