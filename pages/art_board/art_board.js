@@ -62,7 +62,8 @@ function createArtCard(data) {
     description.innerHTML = data.description;
 
     art_card.addEventListener("click", (e) => {
-        growShrinkCard(art_card);
+        //growShrinkCard(art_card);
+        document.location = `http://jackawilson.art/pages/art/art.html?piece-id=` + data.pieceNum
     });
 
     return art_card_border;
