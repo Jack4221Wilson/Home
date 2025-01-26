@@ -165,12 +165,16 @@ p {
   top: 0;
   left: 0;
   display: flex;
+  gap: 0.3rem;
 }
 .home-link {
   font-size: 2rem;
   margin: 0;
   padding: 0;
-  color: #dc5085;
+  color: #ede6e6;
+  &:hover {
+    color: #d9c565;
+  }
 }
 .nav-list {
   display: flex;
@@ -178,18 +182,39 @@ p {
   gap: 10px;
   list-style: none;
   width: max-content;
+  padding: 0
 }
 .nav-link {
   flex: auto;
-  height: 2rem;
+  height: 1.875rem;
   border-radius: 1rem;
   background-color: #dc5085;
   text-align: center;
+  padding-top: 0.125rem;
   a {
     color: #ede6e6;
     font-size: 1.5rem;
-    padding-block: 0.25rem;
   }
+  &:hover {
+    background-color:#d9c565;
+  }
+}
+
+.ruler-v {
+  background-image: url('Flowers.svg');
+  background-size: 5rem 5rem;
+  height: auto;
+  width: 0.3rem;
+  border-radius: 0.15rem;
+}
+.ruler-hc {
+  background-image: url('Flowers.svg');
+  background-size: 5rem 5rem;
+  border-radius: 0.15rem;
+  width: auto;
+  height: 0.3rem;
+  margin-block: auto;
+  flex: auto;
 }
 /* art page */
 .centering {
@@ -205,6 +230,8 @@ p {
   margin-inline: 5%;
   margin-block: 0.5rem;
   display: flex;
+  flex: auto;
+  gap: 10px;
   justify-content: space-between;
 }
 .title {
