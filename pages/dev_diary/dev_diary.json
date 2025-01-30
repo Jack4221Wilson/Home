@@ -1,0 +1,8 @@
+{
+    "entries": [
+        {
+            "date": "Jan 29",
+            "thoughts": "So I'm starting a dev dairy; probably should have started it sooner. Like, way back in May of last year. But I'm starting it now. I figured it would be good typing practice,give me a way to document my proccess, and work through what I'm thinking to hopefully make better progress and prevent myself from staying stuck on something. \nAnd hopefully keep me comitted to this site.\nAnyway, I made a to-do list in my journal and drew out what I want the next version of the landing page to look like. I was thinking about how to make the page feel a little bit more like me; give it my \"voice\", so to speak. Including headers that felt more like my speaking and having fun little hand written notes felt like a good way to do it. The page is also going to be taking inspiration from Google's Material Design with each section being a seperate sort of tab that has pockets to other links. Maybe once I have everything layed out I'll also incorparate gentle gradients. We will see.\nNow I am trying to figure out how to do a mosaic layout for my art and deseign pages. It's a layout I've done in the past, but I feel like I can simplify the code side for this project. The real issue is taking that first step to go re-write the code and styling that I've already done for a flex-box based design. It will be worth it in the end, though. I'm sure of it."
+        }
+    ]
+}
