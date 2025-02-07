@@ -1,9 +1,9 @@
 const art_board = document.querySelector("div");
 
-const example_card = document.querySelector("div .art-card");
+/* const example_card = document.querySelector("div .art-card");
 example_card.addEventListener("click", (e) => {
   growShrinkCard(example_card);
-});
+}); */
 
 
 const fps = 1000/12;
@@ -66,6 +66,32 @@ function createArtCard(data) {
         document.location = `http://jackawilson.art/pages/art/art.html?piece-id=` + data.pieceNum
     });
 
+    let ele_width = 4;
+    let ele_height = 3;
+
+    if (data.portrait === true) {
+        ele_width = 3;
+        ele_height = 4;
+    };
+    checkStart(ele_width);
+    checkEnd(ele_width);
+    art_card_border.setAttribute('style', `
+            grid-column: ${grid_start[0]} / ${grid_start[0] + ele_width};
+            grid-row: ${grid_start[1]} / ${grid_start[1] + ele_height};
+    `);
+
+    const oldGrid = grid;
+    var newGrid = oldGrid;
+
+    for (let i = grid_start[0]; i <= grid_start[0] + ele_width; i++) {
+        for (let j = grid_start[1]; j <= grid_start[1] + ele_height; j++) {
+            newGrid[i-1][j-1] = true;
+        };
+    };
+    grid = newGrid;
+    grid_start[0] = grid_start[0] + ele_width;
+
+    console.log(art_card_border);
     return art_card_border;
 
 };
@@ -97,5 +123,42 @@ async function populateBoard() {
     });
 };
 
-populateBoard();
+var grid_start = [1, 1];
+var grid_size = [13, 30];
+var grid = [];
+
+function initGrid() {
+    for (let i = 0; i < grid_size[1]; i++) {
+        let lineOfY = []
+        for (let j = 0; j < grid_size[0]; j++) { lineOfY.push(false) }
+        grid.push(lineOfY)
+    };
+    populateBoard();
+    console.log(grid);
+}
+
+var art_data = getArtList();
+
+function checkStart(card_width) {
+    if (grid_start[0] + card_width > 12) { grid_start[1]++; grid_start[0] = 1 };
+
+    if (grid[grid_start[0]][grid_start[1]]) { grid_start[0]++ }
+    else { return };
+
+    //grid[grid_start[0]][grid_start[1]] ? grid_start[1]++ : return;
+    if (grid_start[0] <= grid_size[0] || grid_start[1] <= grid_size[1]) { checkStart(card_width) };
+};
+
+function checkEnd(card_width) {
+    console.log(grid[grid_start[0] + card_width][grid_start[1]]);
+    if (grid[grid_start[0] + card_width][grid_start[1]]) {
+        grid_start[1]++;
+        checkEnd(card_width);
+    } else {
+        return
+    };
+    if (card_width + grid_start[0] >= grid_size[0]) { checkEnd(card_width); };
+};
+
+initGrid();
 

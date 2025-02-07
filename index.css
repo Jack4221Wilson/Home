@@ -105,8 +105,8 @@ p {
 }
 
 .art-board {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template: repeat(50, 1fr) / repeat(50, 4rem);
   margin: 2rem;
   width: calc(90vw - 2rem);
 }
@@ -114,8 +114,8 @@ p {
     display: block;
     background-color: rgb(51,95,122);
     position: relative;
-    height: fit-content;
-    width: 11rem;
+    height: auto;
+    width: auto;
     margin: 0.25rem;
     overflow: hidden;
     border-radius: 10%;
@@ -149,8 +149,6 @@ p {
 
 .art-card-border{
     background: url('Flowers.svg');
-    width: fit-content;
-    height: fit-content;
     margin: 0.5rem;
     border-radius: 10%;
 }
