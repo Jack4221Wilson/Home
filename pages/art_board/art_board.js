@@ -121,10 +121,11 @@ async function populateBoard() {
 
         art_board.appendChild(i);
     });
+    console.log(findLastRow());
 };
 
 var grid_start = [1, 1];
-var grid_size = [13, 30];
+var grid_size = [13, 25];
 var grid = [];
 
 function initGrid() {
@@ -161,4 +162,28 @@ function checkEnd(card_width) {
 };
 
 initGrid();
+
+function findLastRow() {
+  let final_line = 0;
+  console.log(grid.length);
+  grid.forEach((current_row) => {
+
+    //console.log(current_row, checkRow(current_row));
+
+    if (!checkRow(current_row)) { final_line++ };
+    
+  });
+  return final_line
+};
+
+function checkRow(row) {
+    var is_true = false;
+    row.forEach((x) => {
+      //console.log(x)
+      is_true = false;
+      if (x) { return is_true};
+      is_true = true;
+    });
+    return is_true;
+};
 
