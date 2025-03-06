@@ -1,3 +1,13 @@
+:root {
+  --color-blue: rgb(65,96,126);
+  --color-yellow: rgb(214,190,103);
+  --color-magenta: rgb(216,87,133);
+  --color-white: rgb(217, 230, 230);
+
+  --font-sans: 1rem "Cabin", sans-serif;
+  --font-serif: 1rem "Bitter", serif;
+}
+
 html{
   font-size: 2vmax;
   height: fit-content;
